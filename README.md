@@ -1,0 +1,61 @@
+# Task Tracker CLI
+
+A small command-line tool for tracking tasks from a terminal. You add tasks, list them,
+mark them done, and remove them. Tasks are stored in a plain JSON file next to wherever
+you run the command.
+
+This repository is the companion code for the Sypher course "GitHub Fundamentals". It
+exists so you have a real, small codebase to clone, branch, commit to, and open pull
+requests against while you learn Git and GitHub, instead of practicing on a blank folder.
+
+## Requirements
+
+- Node.js 20 or later
+- Git
+
+## Install
+
+```bash
+git clone git@github.com:codeasign/task-tracker-cli.git
+cd task-tracker-cli
+npm install
+```
+
+## Use it
+
+```bash
+node src/index.js add "Write the Q3 report"
+node src/index.js list
+node src/index.js done 1
+node src/index.js remove 1
+```
+
+## Run the tests
+
+```bash
+npm test
+```
+
+## Project layout
+
+```text
+src/
+  index.js          CLI entry point, parses argv and dispatches to a command
+  taskStore.js       reads and writes tasks.json, the only file that touches disk
+  commands/
+    add.js
+    list.js
+    done.js
+    remove.js
+test/
+  taskStore.test.js
+```
+
+## License
+
+Copyright (C) 2026 SypherNext
+
+This project is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0). You may
+use, study and change it. If you share a modified version, or run one as a website or service
+that other people use, you must make your full modified source code available under the same
+license. See [LICENSE](LICENSE) for the full terms.
