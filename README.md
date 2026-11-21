@@ -16,7 +16,7 @@ requests against while you learn Git and GitHub, instead of practicing on a blan
 ## Install
 
 ```bash
-git clone git@github.com:codeasign/task-tracker-cli.git
+git clone git@github.com:SypherNext/task-tracker-cli.git
 cd task-tracker-cli
 npm install
 ```
