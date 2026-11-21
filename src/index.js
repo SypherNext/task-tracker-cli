@@ -10,7 +10,14 @@ const store = new TaskStore();
 
 switch (command) {
   case 'add': {
-    const task = add(store, args.join(' '));
+    const flagIndex = args.indexOf('--priority');
+    let priority;
+    let words = args;
+    if (flagIndex !== -1) {
+      priority = args[flagIndex + 1];
+      words = [...args.slice(0, flagIndex), ...args.slice(flagIndex + 2)];
+    }
+    const task = add(store, words.join(' '), priority);
     console.log(`Added task ${task.id}: ${task.text}`);
     break;
   }
@@ -31,11 +38,6 @@ switch (command) {
   case 'remove': {
     const id = remove(store, args[0]);
     console.log(`Removed task ${id}`);
-    break;
-  }
-  case 'clear': {
-    store.save([]);
-    console.log('Cleared all tasks.');
     break;
   }
   default: {
