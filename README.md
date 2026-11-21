@@ -31,7 +31,7 @@ instead of practicing on a blank folder.
 ## Install
 
 ```bash
-git clone git@github.com:codeasign/task-tracker-cli.git
+git clone git@github.com:SypherNext/task-tracker-cli.git
 cd task-tracker-cli
 npm install
 ```
